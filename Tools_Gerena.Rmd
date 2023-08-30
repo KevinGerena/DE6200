@@ -1,0 +1,42 @@
+---
+title: "DE6200 Notebook"
+output: html_notebook
+---
+
+```{r}
+#Data: number of ticks found on dogs sampled from a shelter
+tickdata<-c(0,0,0,0,1,0,6,0,3,3,5,22,0,0,3,33,4,2,1,23,7,2,4,6,78)
+hist(tickdata, breaks=90)
+```
+![Epidemiological Triad](Images/EpiTriad.png)
+
+# Markdown Basics
+## Heading 2
+### *Heading 3*
+#### **Heading 4**
+*Italics*
+**Bold**
+***Bold and Italics***
+Summary: I learned about formatting and notation within R-Notebook. I had never previously used this tool.
+
+# 8-30-23 Measures of Disease Frequency
+![Sample Size Table by Roe and Cannon (1982)](Images/ss_table.png)
+
+# Questions
+1. 59 Deer
+2. 95% confidence at 1% prevalence required 70 more deer than 99% confidence at 2% prevalence.
+3. <1% prevalence
+4. 
+Lee County: 20% prevalence (+/-13%)
+Chambers County: 26.7% prevalence (+/-31.8%)
+Russell County: 3.1% prevalence (+/-7.8%)
+
+**Comparison of prevalences by Fisher's exact test**
+
+                                  N  Infected Non-inf.   Prev.%
+Chambers.Turkey$lameness          30       8      22      26.7 
+Lee.Turkey$lameness              150      30     120      20.0 
+Russell.Turkey$lameness           96       3      93       3.1 
+
+     Two-sided p-value: <0.0001 
+This p-value is significant, suggesting that prevalence of lameness in these three counties is significantly different. It should be noted that Chambers County has a large confidence interval that is likely a result of the small sample size potentially biasing results. Further tests are needed to evaluate this.
