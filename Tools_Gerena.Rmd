@@ -40,3 +40,5 @@ Russell.Turkey$lameness           96       3      93       3.1
 
      Two-sided p-value: <0.0001 
 This p-value is significant, suggesting that prevalence of lameness in these three counties is significantly different. It should be noted that Chambers County has a large confidence interval that is likely a result of the small sample size potentially biasing results. Further tests are needed to evaluate this.
+
+<mark> Please include your 'Images' folder in the Github repository. Your collaborators will be able to execute the R Notebook properly.
