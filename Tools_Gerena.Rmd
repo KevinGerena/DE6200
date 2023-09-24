@@ -1,13 +1,25 @@
 ---
 title: "DE6200 Notebook"
-output: html_notebook
+author: "Kevin Gerena"
+output:
+  html_document:
+    df_print: paged
 ---
+
+<mark> See above: I have added author to your YAML header.
+
+<mark> Also, Heading 3 (###) for dates.
+
+### 23 Aug 2023
 
 ```{r}
 #Data: number of ticks found on dogs sampled from a shelter
 tickdata<-c(0,0,0,0,1,0,6,0,3,3,5,22,0,0,3,33,4,2,1,23,7,2,4,6,78)
 hist(tickdata, breaks=90)
 ```
+
+<mark> Upload your 'Images' folder to the Github.
+
 ![Epidemiological Triad](Images/EpiTriad.png)
 
 # Markdown Basics
@@ -19,8 +31,13 @@ hist(tickdata, breaks=90)
 ***Bold and Italics***
 Summary: I learned about formatting and notation within R-Notebook. I had never previously used this tool.
 
-# 8-30-23 Measures of Disease Frequency
+<mark> Spacing is very important when you use RMarkdown. For example, add space (enter) before 'Summary:...' above.
+
+### 8-30-23 Measures of Disease Frequency
 ![Sample Size Table by Roe and Cannon (1982)](Images/ss_table.png)
+
+<mark> Spacing between the two lines above.
+<mark> Use a consistent heading style. For 'Questions' below use ####. Also, remember to use spaces between a header and the following paragraph.
 
 # Questions
 1. 59 Deer
@@ -40,6 +57,8 @@ Russell.Turkey$lameness           96       3      93       3.1
 
      Two-sided p-value: <0.0001 
 This p-value is significant, suggesting that prevalence of lameness in these three counties is significantly different. It should be noted that Chambers County has a large confidence interval that is likely a result of the small sample size potentially biasing results. Further tests are needed to evaluate this.
+
+<mark> the following two lab assignments are mixed up. Separate them for better readability.
 
 # 9/13/23
 
