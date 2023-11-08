@@ -156,4 +156,46 @@ alt_dist <- ggplot(alhdata, aes(x,y,group=group,fill=full%in%states_found))+
   labs(title= "Asian longhorned tick distribution in US states",subtitle="As of February 2023; https://www.cdc.gov/ticks/longhorned-tick/,") +
   theme(panel.background = element_rect(color= "black", fill="gray"))
 alt_dist
+
+### Heartland Virus
+
+library(ggplot2)
+library(usmap)
+library(dplyr)
+
+alhdata2 <- us_map(regions = "states")
+alhdata2
+
+states_found2 <- c("Virginia","Arkansas","North Carolina","Iowa","Pennsylvania","New York","Indiana", "Tennessee","Kentucky","Oklahoma","Georgia","Illinois","Kansas","Missouri")
+
+alt_dist2 <- ggplot(alhdata2, aes(x,y,group=group,fill=full%in%states_found2))+
+  geom_polygon(color ='black')+
+  coord_equal()+
+  scale_fill_manual(values=c('white','orange'),guide ='none')+
+  usmap:::theme_map()+
+  labs(title= "Heartland Virus Disease Distribution in the US",subtitle="As of November 2022; https://www.cdc.gov/heartland-virus/statistics/index/,") +
+  theme(panel.background = element_rect(color= "black", fill="gray"))
+
+alt_dist2
+
+### 11-8-23
+library(tidyverse)
+cwd1<-read.csv("cwdcounties_fip.csv",header=TRUE)
+cwd<-cwd1[["fip"]]
+
+maps::county.fips %>%
+  as_tibble %>%
+  extract(polyname, c("region", "subregion"), "^([^,]+),([^,]+)$")->
+  dfips
+
+map_data("county") %>%
+  left_join(dfips)->
+  dall
+
+dall %>%
+  mutate(is_example=fips %in% cwd) %>%
+  ggplot(aes(long, lat, group=group))+
+  geom_polygon(aes(fill=is_example),color="gray70")+
+  coord_map()+
+  scale_fill_manual(values=c("TRUE"="red","FALSE"="gray90"))
 ```
